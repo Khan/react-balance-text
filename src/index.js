@@ -2,9 +2,32 @@ import React from 'react';
 import balanceText from 'balance-text';
 
 class BalanceText extends React.Component {
+  static defaultProps = {
+    resize: true,
+  }
+
+  static propTypes = {
+    children: React.PropTypes.oneOfType([
+      React.PropTypes.arrayOf(React.PropTypes.node),
+      React.PropTypes.node,
+    ]),
+    style: React.PropTypes.oneOfType([
+      React.PropTypes.arrayOf(React.PropTypes.any),
+      React.PropTypes.any,
+    ]),
+    resize: React.PropTypes.bool,
+  }
+
   constructor() {
     super();
-    this._handleResize = () => this._balanceText();
+    
+    this._handleResize = () => {
+      if (!this.props.resize) {
+        return;
+      }
+
+      this._balanceText();
+    };
   }
 
   componentDidMount() {
@@ -38,16 +61,5 @@ class BalanceText extends React.Component {
     </div>;
   }
 }
-
-BalanceText.propTypes = {
-  children: React.PropTypes.oneOfType([
-    React.PropTypes.arrayOf(React.PropTypes.node),
-    React.PropTypes.node,
-  ]),
-  style: React.PropTypes.oneOfType([
-    React.PropTypes.arrayOf(React.PropTypes.any),
-    React.PropTypes.any,
-  ]),
-};
 
 export default BalanceText;

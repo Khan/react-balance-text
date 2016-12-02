@@ -43,4 +43,18 @@ storiesOf('BalanceText', module)
 
     return <Wrapper />;
 
+  })
+  .add('Window Resize', () => {
+    const text = `Cupcake ipsum dolor. Sit amet apple pie danish tootsie roll bear claw tootsie roll wafer ice cream. Dessert cake croissant croissant chocolate. Cupcake gummi bears powder bonbon bonbon tootsie roll pie. Cupcake wafer icing sweet danish sweet roll cookie. Marshmallow cookie jelly-o pastry candy powder. Donut icing brownie apple pie jujubes lemon drops croissant candy canes toffee. Halvah wafer cheesecake powder sweet roll. Donut tootsie roll marzipan jelly beans gingerbread. Sweet roll tiramisu dessert chocolate bar. Bonbon pastry chocolate. Fruitcake muffin lollipop marzipan ice cream jujubes cake tootsie roll jelly beans.`;
+
+    return <div>
+      <h2>Resize the Browser window to see automatic re-flowing</h2>
+      <hr />
+
+      <h3>Auto-resize (default)</h3>
+      <BalanceText>{text}</BalanceText>
+
+      <h3>Auto-resize disabled</h3>
+      <BalanceText resize={false}>{text}</BalanceText>
+    </div>;
   });
