@@ -20,7 +20,7 @@ class BalanceText extends React.Component {
 
   constructor() {
     super();
-    
+
     this._handleResize = () => {
       if (!this.props.resize) {
         return;
@@ -31,7 +31,7 @@ class BalanceText extends React.Component {
   }
 
   componentDidMount() {
-    window.addEventListener("resize", this._handleResize);
+    window.addEventListener('resize', this._handleResize);
     this._balanceText();
   }
 
@@ -40,25 +40,25 @@ class BalanceText extends React.Component {
   }
 
   componentWillUnmount() {
-    window.removeEventListener("resize", this._handleResize);
+    window.removeEventListener('resize', this._handleResize);
   }
 
   _balanceText() {
-    const {container} = this.refs;
+    const { container } = this;
 
     container.style.visibility = 'visible';
-    
+
     balanceText.balanceText(container);
   }
-  
+
   render() {
-    const {children, style} = this.props;
-    
-    const combinedStyle = {...style, visibility: 'hidden'};
-    
-    return <div style={style}>
-      <span ref="container">{children}</span>
-    </div>;
+    const { children, style } = this.props;
+
+    const combinedStyle = { ...style, visibility: 'hidden' };
+
+    return (<div style={combinedStyle}>
+      <span ref={(container) => { this.container = container; }}>{children}</span>
+    </div>);
   }
 }
 

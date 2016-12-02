@@ -1,6 +1,9 @@
 {
   "extends": "airbnb",
   "parser": "babel-eslint",
+  "env": {
+    "browser": true
+  },
   "rules": {
     # We use _ to define private variables and methods in clases
     "no-underscore-dangle": 0,
