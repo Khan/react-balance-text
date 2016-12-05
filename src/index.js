@@ -3,6 +3,8 @@ import balanceText from 'balance-text';
 
 class BalanceText extends React.Component {
   static defaultProps = {
+    children: '',
+    style: {},
     resize: true,
   }
 
@@ -28,11 +30,15 @@ class BalanceText extends React.Component {
 
       this._balanceText();
     };
+
+    this.state = {
+      visible: false,
+    };
   }
 
   componentDidMount() {
     window.addEventListener('resize', this._handleResize);
-    this._balanceText();
+    this._makeVisible();
   }
 
   componentDidUpdate() {
@@ -43,18 +49,24 @@ class BalanceText extends React.Component {
     window.removeEventListener('resize', this._handleResize);
   }
 
+  _makeVisible() {
+    this.setState({ visible: true });
+  }
+
   _balanceText() {
     const { container } = this;
-
-    container.style.visibility = 'visible';
 
     balanceText.balanceText(container);
   }
 
   render() {
     const { children, style } = this.props;
+    const { visible } = this.state;
 
-    const combinedStyle = { ...style, visibility: 'hidden' };
+    const combinedStyle = {
+      ...style,
+      visibility: visible ? 'visible' : 'hidden',
+    };
 
     return (<div style={combinedStyle}>
       <span ref={(container) => { this.container = container; }}>{children}</span>

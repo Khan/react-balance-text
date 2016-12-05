@@ -39,6 +39,10 @@ var BalanceText = function (_React$Component) {
 
       _this._balanceText();
     };
+
+    _this.state = {
+      visible: false
+    };
     return _this;
   }
 
@@ -46,7 +50,7 @@ var BalanceText = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       window.addEventListener('resize', this._handleResize);
-      this._balanceText();
+      this._makeVisible();
     }
   }, {
     key: 'componentDidUpdate',
@@ -59,12 +63,15 @@ var BalanceText = function (_React$Component) {
       window.removeEventListener('resize', this._handleResize);
     }
   }, {
+    key: '_makeVisible',
+    value: function _makeVisible() {
+      this.setState({ visible: true });
+    }
+  }, {
     key: '_balanceText',
     value: function _balanceText() {
       var container = this.container;
 
-
-      container.style.visibility = 'visible';
 
       _balanceText3.default.balanceText(container);
     }
@@ -76,9 +83,12 @@ var BalanceText = function (_React$Component) {
       var _props = this.props,
           children = _props.children,
           style = _props.style;
+      var visible = this.state.visible;
 
 
-      var combinedStyle = _extends({}, style, { visibility: 'hidden' });
+      var combinedStyle = _extends({}, style, {
+        visibility: visible ? 'visible' : 'hidden'
+      });
 
       return _react2.default.createElement(
         'div',
@@ -98,6 +108,8 @@ var BalanceText = function (_React$Component) {
 }(_react2.default.Component);
 
 BalanceText.defaultProps = {
+  children: '',
+  style: {},
   resize: true
 };
 BalanceText.propTypes = {
