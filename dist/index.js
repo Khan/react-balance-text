@@ -32,13 +32,7 @@ var BalanceText = function (_React$Component) {
 
         var _this = _possibleConstructorReturn(this, (BalanceText.__proto__ || Object.getPrototypeOf(BalanceText)).call(this));
 
-        _this._handleResize = function () {
-            if (!_this.props.resize) {
-                return;
-            }
-
-            _this._balanceText();
-        };
+        _this._handleResize = _this._handleResize.bind(_this);
 
         _this.state = {
             visible: false
@@ -72,8 +66,20 @@ var BalanceText = function (_React$Component) {
         value: function _balanceText() {
             var container = this.container;
 
+            if (!container) {
+                return;
+            }
 
             _balanceText3.default.balanceText(container);
+        }
+    }, {
+        key: '_handleResize',
+        value: function _handleResize() {
+            if (!this.props.resize) {
+                return;
+            }
+
+            this._balanceText();
         }
     }, {
         key: 'render',
@@ -82,7 +88,8 @@ var BalanceText = function (_React$Component) {
 
             var _props = this.props,
                 children = _props.children,
-                style = _props.style;
+                style = _props.style,
+                className = _props.className;
             var visible = this.state.visible;
 
 
@@ -92,7 +99,7 @@ var BalanceText = function (_React$Component) {
 
             return _react2.default.createElement(
                 'div',
-                { style: combinedStyle },
+                { style: combinedStyle, className: className },
                 _react2.default.createElement(
                     'span',
                     { ref: function ref(container) {
@@ -113,7 +120,8 @@ BalanceText.defaultProps = {
     resize: true
 };
 BalanceText.propTypes = {
-    children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.node), _react2.default.PropTypes.node]),
+    children: _react2.default.PropTypes.node,
+    className: _react2.default.PropTypes.string,
     style: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.any), _react2.default.PropTypes.any]),
     resize: _react2.default.PropTypes.bool
 };
