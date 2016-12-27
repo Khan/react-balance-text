@@ -9,10 +9,8 @@ class BalanceText extends React.Component {
     }
 
     static propTypes = {
-        children: React.PropTypes.oneOfType([
-            React.PropTypes.arrayOf(React.PropTypes.node),
-            React.PropTypes.node,
-        ]),
+        children: React.PropTypes.node,
+        className: React.PropTypes.string,
         style: React.PropTypes.oneOfType([
             React.PropTypes.arrayOf(React.PropTypes.any),
             React.PropTypes.any,
@@ -23,13 +21,7 @@ class BalanceText extends React.Component {
     constructor() {
         super();
 
-        this._handleResize = () => {
-            if (!this.props.resize) {
-                return;
-            }
-
-            this._balanceText();
-        };
+        this._handleResize = this._handleResize.bind(this);
 
         this.state = {
             visible: false,
@@ -55,12 +47,23 @@ class BalanceText extends React.Component {
 
     _balanceText() {
         const {container} = this;
+        if (!container) {
+            return;
+        }
 
         balanceText.balanceText(container);
     }
 
+    _handleResize() {
+        if (!this.props.resize) {
+            return;
+        }
+
+        this._balanceText();
+    }
+
     render() {
-        const {children, style} = this.props;
+        const {children, style, className} = this.props;
         const {visible} = this.state;
 
         const combinedStyle = {
@@ -68,7 +71,7 @@ class BalanceText extends React.Component {
             visibility: visible ? 'visible' : 'hidden',
         };
 
-        return <div style={combinedStyle}>
+        return <div style={combinedStyle} className={className}>
             <span ref={container => this.container = container}>
                 {children}
             </span>

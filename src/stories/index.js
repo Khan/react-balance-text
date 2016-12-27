@@ -69,4 +69,21 @@ storiesOf('BalanceText', module)
             <h3>Auto-resize disabled</h3>
             <BalanceText resize={false}>{text}</BalanceText>
         </div>;
+    })
+    .add('Nested Children', () => {
+        const text = 'Lucas ipsum dolor sit amet chewbacca darth c-3p0 ackbar skywalker moff skywalker owen fett organa. Kenobi mon lando ewok. Jade watto dagobah gamorrean mon kashyyyk. Mara k-3po moff hoth. Boba zabrak padmé calamari qui-gon ben. Fisto yavin mara coruscant windu lars mace boba wicket. Vader yavin solo darth jade hutt jango. Watto darth organa hutt maul skywalker antilles. Fett moff antilles organa. Naboo ponda grievous fett. Mothma amidala antilles wookiee c-3po darth antilles windu. Kessel calamari hutt luuke tusken raider skywalker qui-gon.'; // eslint-disable-line
+
+        return <BalanceText>
+            <strong>{text}</strong>
+        </BalanceText>;
+    })
+    .add('Passing className', () => {
+        const css = document.createElement("style");
+        css.type = "text/css";
+        css.innerHTML = ".make-red { color: red }";
+        document.body.appendChild(css);
+
+        return <BalanceText className="make-red">
+            This should be red
+        </BalanceText>;
     });
