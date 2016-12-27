@@ -1,7 +1,7 @@
 'use strict';
 
 Object.defineProperty(exports, "__esModule", {
-  value: true
+    value: true
 });
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
@@ -25,96 +25,96 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var BalanceText = function (_React$Component) {
-  _inherits(BalanceText, _React$Component);
+    _inherits(BalanceText, _React$Component);
 
-  function BalanceText() {
-    _classCallCheck(this, BalanceText);
+    function BalanceText() {
+        _classCallCheck(this, BalanceText);
 
-    var _this = _possibleConstructorReturn(this, (BalanceText.__proto__ || Object.getPrototypeOf(BalanceText)).call(this));
+        var _this = _possibleConstructorReturn(this, (BalanceText.__proto__ || Object.getPrototypeOf(BalanceText)).call(this));
 
-    _this._handleResize = function () {
-      if (!_this.props.resize) {
-        return;
-      }
+        _this._handleResize = function () {
+            if (!_this.props.resize) {
+                return;
+            }
 
-      _this._balanceText();
-    };
+            _this._balanceText();
+        };
 
-    _this.state = {
-      visible: false
-    };
-    return _this;
-  }
-
-  _createClass(BalanceText, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      window.addEventListener('resize', this._handleResize);
-      this._makeVisible();
+        _this.state = {
+            visible: false
+        };
+        return _this;
     }
-  }, {
-    key: 'componentDidUpdate',
-    value: function componentDidUpdate() {
-      this._balanceText();
-    }
-  }, {
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      window.removeEventListener('resize', this._handleResize);
-    }
-  }, {
-    key: '_makeVisible',
-    value: function _makeVisible() {
-      this.setState({ visible: true });
-    }
-  }, {
-    key: '_balanceText',
-    value: function _balanceText() {
-      var container = this.container;
+
+    _createClass(BalanceText, [{
+        key: 'componentDidMount',
+        value: function componentDidMount() {
+            window.addEventListener('resize', this._handleResize);
+            this._makeVisible();
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            this._balanceText();
+        }
+    }, {
+        key: 'componentWillUnmount',
+        value: function componentWillUnmount() {
+            window.removeEventListener('resize', this._handleResize);
+        }
+    }, {
+        key: '_makeVisible',
+        value: function _makeVisible() {
+            this.setState({ visible: true });
+        }
+    }, {
+        key: '_balanceText',
+        value: function _balanceText() {
+            var container = this.container;
 
 
-      _balanceText3.default.balanceText(container);
-    }
-  }, {
-    key: 'render',
-    value: function render() {
-      var _this2 = this;
+            _balanceText3.default.balanceText(container);
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
 
-      var _props = this.props,
-          children = _props.children,
-          style = _props.style;
-      var visible = this.state.visible;
+            var _props = this.props,
+                children = _props.children,
+                style = _props.style;
+            var visible = this.state.visible;
 
 
-      var combinedStyle = _extends({}, style, {
-        visibility: visible ? 'visible' : 'hidden'
-      });
+            var combinedStyle = _extends({}, style, {
+                visibility: visible ? 'visible' : 'hidden'
+            });
 
-      return _react2.default.createElement(
-        'div',
-        { style: combinedStyle },
-        _react2.default.createElement(
-          'span',
-          { ref: function ref(container) {
-              _this2.container = container;
-            } },
-          children
-        )
-      );
-    }
-  }]);
+            return _react2.default.createElement(
+                'div',
+                { style: combinedStyle },
+                _react2.default.createElement(
+                    'span',
+                    { ref: function ref(container) {
+                            return _this2.container = container;
+                        } },
+                    children
+                )
+            );
+        }
+    }]);
 
-  return BalanceText;
+    return BalanceText;
 }(_react2.default.Component);
 
 BalanceText.defaultProps = {
-  children: '',
-  style: {},
-  resize: true
+    children: '',
+    style: {},
+    resize: true
 };
 BalanceText.propTypes = {
-  children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.node), _react2.default.PropTypes.node]),
-  style: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.any), _react2.default.PropTypes.any]),
-  resize: _react2.default.PropTypes.bool
+    children: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.node), _react2.default.PropTypes.node]),
+    style: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.any), _react2.default.PropTypes.any]),
+    resize: _react2.default.PropTypes.bool
 };
 exports.default = BalanceText;
