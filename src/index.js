@@ -51,7 +51,7 @@ class BalanceText extends React.Component {
             return;
         }
 
-        balanceText.balanceText(container);
+        balanceText(container);
     }
 
     _handleResize() {

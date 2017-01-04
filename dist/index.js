@@ -70,7 +70,7 @@ var BalanceText = function (_React$Component) {
                 return;
             }
 
-            _balanceText3.default.balanceText(container);
+            (0, _balanceText3.default)(container);
         }
     }, {
         key: '_handleResize',
