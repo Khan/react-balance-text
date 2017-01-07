@@ -1,10 +1,10 @@
 {
   "name": "react-balance-text",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Balance Text Component",
   "repository": {
     "type": "git",
-    "url": "https://github.com/you/repo.git"
+    "url": "https://github.com/khan/react-balance-text"
   },
   "license": "MIT",
   "scripts": {
