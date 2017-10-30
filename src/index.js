@@ -12,7 +12,7 @@ class BalanceText extends React.Component {
         children: PropTypes.node,
         className: PropTypes.string,
         style: PropTypes.oneOfType([
-            PropTypes.arrayOf(React.PropTypes.any),
+            PropTypes.arrayOf(PropTypes.any),
             PropTypes.any,
         ]),
         resize: PropTypes.bool,
