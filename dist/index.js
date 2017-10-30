@@ -126,7 +126,7 @@ BalanceText.defaultProps = {
 BalanceText.propTypes = {
     children: _propTypes2.default.node,
     className: _propTypes2.default.string,
-    style: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_react2.default.PropTypes.any), _propTypes2.default.any]),
+    style: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.any), _propTypes2.default.any]),
     resize: _propTypes2.default.bool
 };
 exports.default = BalanceText;
