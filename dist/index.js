@@ -59,7 +59,12 @@ var BalanceText = function (_React$Component) {
     }, {
         key: '_makeVisible',
         value: function _makeVisible() {
+            var _this2 = this;
+
             this.setState({ visible: true });
+            this.setTimeout(function () {
+                return _this2._balanceText();
+            }, 0);
         }
     }, {
         key: '_balanceText',
@@ -84,7 +89,7 @@ var BalanceText = function (_React$Component) {
     }, {
         key: 'render',
         value: function render() {
-            var _this2 = this;
+            var _this3 = this;
 
             var _props = this.props,
                 children = _props.children,
@@ -103,7 +108,7 @@ var BalanceText = function (_React$Component) {
                 _react2.default.createElement(
                     'span',
                     { ref: function ref(container) {
-                            return _this2.container = container;
+                            return _this3.container = container;
                         } },
                     children
                 )
