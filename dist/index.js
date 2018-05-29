@@ -62,7 +62,7 @@ var BalanceText = function (_React$Component) {
             var _this2 = this;
 
             this.setState({ visible: true });
-            this.setTimeout(function () {
+            setTimeout(function () {
                 return _this2._balanceText();
             }, 0);
         }

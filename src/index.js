@@ -43,7 +43,7 @@ class BalanceText extends React.Component {
 
     _makeVisible() {
         this.setState({visible: true});
-        this.setTimeout(() => this._balanceText(), 0);
+        setTimeout(() => this._balanceText(), 0);
     }
 
     _balanceText() {
