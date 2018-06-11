@@ -12,6 +12,10 @@ var _react = require('react');
 
 var _react2 = _interopRequireDefault(_react);
 
+var _propTypes = require('prop-types');
+
+var _propTypes2 = _interopRequireDefault(_propTypes);
+
 var _balanceText2 = require('balance-text');
 
 var _balanceText3 = _interopRequireDefault(_balanceText2);
@@ -125,9 +129,9 @@ BalanceText.defaultProps = {
     resize: true
 };
 BalanceText.propTypes = {
-    children: _react2.default.PropTypes.node,
-    className: _react2.default.PropTypes.string,
-    style: _react2.default.PropTypes.oneOfType([_react2.default.PropTypes.arrayOf(_react2.default.PropTypes.any), _react2.default.PropTypes.any]),
-    resize: _react2.default.PropTypes.bool
+    children: _propTypes2.default.node,
+    className: _propTypes2.default.string,
+    style: _propTypes2.default.oneOfType([_propTypes2.default.arrayOf(_propTypes2.default.any), _propTypes2.default.any]),
+    resize: _propTypes2.default.bool
 };
 exports.default = BalanceText;

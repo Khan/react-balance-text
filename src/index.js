@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import balanceText from 'balance-text';
 
 class BalanceText extends React.Component {
@@ -9,13 +10,13 @@ class BalanceText extends React.Component {
     }
 
     static propTypes = {
-        children: React.PropTypes.node,
-        className: React.PropTypes.string,
-        style: React.PropTypes.oneOfType([
-            React.PropTypes.arrayOf(React.PropTypes.any),
-            React.PropTypes.any,
+        children: PropTypes.node,
+        className: PropTypes.string,
+        style: PropTypes.oneOfType([
+            PropTypes.arrayOf(PropTypes.any),
+            PropTypes.any,
         ]),
-        resize: React.PropTypes.bool,
+        resize: PropTypes.bool,
     }
 
     constructor() {
