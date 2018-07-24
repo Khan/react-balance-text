@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import balanceText from 'balance-text';
-
+import PropTypes from 'prop-types';
 class BalanceText extends React.Component {
     static defaultProps = {
         children: '',
